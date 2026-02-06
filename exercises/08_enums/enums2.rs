@@ -7,6 +7,11 @@ struct Point {
 #[derive(Debug)]
 enum Message {
     // TODO: Define the different variants used below.
+    Move (Point),
+    Resize {width:u16, height: u16},
+    Echo (String),
+    ChangeColor(u8,u8,u8),
+    Quit,
 }
 
 impl Message {
@@ -14,6 +19,7 @@ impl Message {
         println!("{self:?}");
     }
 }
+
 
 fn main() {
     let messages = [
